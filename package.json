@@ -1,0 +1,22 @@
+{
+  "name": "pi-high-firework-relays",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/McFinity/pi-high-firework-relays.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/McFinity/pi-high-firework-relays/issues"
+  },
+  "homepage": "https://github.com/McFinity/pi-high-firework-relays#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
