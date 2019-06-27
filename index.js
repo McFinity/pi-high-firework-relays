@@ -11,7 +11,7 @@ const primeButtonStyle = {
     padding: '60px'
 }
 
-const fireButtonStyle = {
+const detonateButtonStyle = {
     fontWeight: '800',
     backgroundColor: 'red',
     borderColor: 'magenta',
@@ -34,11 +34,11 @@ const cancelButtonStyle = {
 class FireButton extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { primed: false, fired: false };
+        this.state = { primed: false, detonated: false };
     }
 
     render() {
-        if (this.state.fired) {
+        if (this.state.detonated) {
             return e(
                 'h3',
                 null,
@@ -56,17 +56,17 @@ class FireButton extends React.Component {
                 e(
                     'button',
                     {
-                        key: 'fireButton',
-                        style: fireButtonStyle,
+                        key: 'detonateButton',
+                        style: detonateButtonStyle,
                         onClick: () => {
-                            fetch('/fire', { method: 'POST' }).then(res => res.json()).then(json => {
-                                if(json.fired) {
-                                    this.setState({ fired: true })
+                            fetch('/detonate', { method: 'POST' }).then(res => res.json()).then(json => {
+                                if (json.detonated) {
+                                    this.setState({ detonated: true })
                                 }
                             })
                         }
                     },
-                    '~~~~~~ !!!  FIRE !!! ~~~~~~'
+                    '~~~~~~ !!!  detonate !!! ~~~~~~'
                 )
             ]
         }
@@ -79,5 +79,5 @@ class FireButton extends React.Component {
     }
 }
 
-const domContainer = document.querySelector('#fire_button_container');
+const domContainer = document.querySelector('#detonate_button_container');
 ReactDOM.render(e(FireButton), domContainer);
